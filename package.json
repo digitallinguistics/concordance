@@ -22,7 +22,9 @@
     "type": "git",
     "url": "https://github.com/digitallinguistics/concordance.git"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "jasmine --config=jasmine.json"
+  },
   "engines": {
     "node": ">=12.0"
   },
