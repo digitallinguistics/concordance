@@ -1,0 +1,32 @@
+{
+  "name": "@digitallinguistics/concordance",
+  "version": "0.1.0",
+  "description": "A Node.js library for concordancing a corpus formatted according to the Data Format for Digital Linguistis (DaFoDiL)",
+  "keywords": [
+    "corpus linguistics",
+    "linguistics",
+    "corpus",
+    "corpora",
+    "digital linguistics",
+    "DLx"
+  ],
+  "homepage": "https://developer.digitallinguistics.io/concordance",
+  "bugs": "https://github.com/digitallinguistics/concordance/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel W. Hieber",
+    "url": "https://danielhieber.com"
+  },
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitallinguistics/concordance.git"
+  },
+  "scripts": {},
+  "engines": {
+    "node": ">=12.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
