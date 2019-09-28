@@ -37,5 +37,8 @@
   "devDependencies": {
     "eslint": "^6.4.0",
     "jasmine": "^3.5.0"
+  },
+  "dependencies": {
+    "csv-stringify": "^5.3.3"
   }
 }

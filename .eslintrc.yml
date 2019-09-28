@@ -332,6 +332,7 @@ rules:
       IfStatement: true
       ImportDeclaration: true
       ImportSpecifier: true
+      VariableDeclarator: true
       VariableDeclaration: true
   no-multi-str: error
   no-multiple-empty-lines:
