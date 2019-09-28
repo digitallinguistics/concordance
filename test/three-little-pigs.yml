@@ -1,0 +1,176 @@
+type: Text
+abbreviation: 3pigs
+dateCreated: 2019-09-28T00:30:50.478Z
+dateModified: 2019-09-28T00:30:50.478Z
+discourseType: monologue
+genre: folktale
+title: The Three Little Pigs
+utterances:
+
+  - transcription: Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them.
+    translation:
+    words:
+      - transcription: once
+      - transcription: upon
+      - transcription: a
+      - transcription: time
+      - transcription: there
+      - transcription: was
+      - transcription: an
+      - transcription: old
+      - transcription: mother
+      - transcription: pig
+      - transcription: who
+      - transcription: had
+      - transcription: three
+      - transcription: little
+      - transcription: pigs
+      - transcription: and
+      - transcription: not
+      - transcription: enough
+      - transcription: food
+      - transcription: to
+      - transcription: feed
+      - transcription: them
+
+  - transcription: So when they were old enough, she sent them out into the world to seek their fortunes.
+    translation:
+    words:
+      - transcription: so
+      - transcription: when
+      - transcription: they
+      - transcription: were
+      - transcription: old
+      - transcription: enough
+      - transcription: she
+      - transcription: sent
+      - transcription: them
+      - transcription: out
+      - transcription: into
+      - transcription: the
+      - transcription: world
+      - transcription: to
+      - transcription: seek
+      - transcription: their
+      - transcription: fortunes
+
+  - transcription: The first little pig was very lazy.
+    translation:
+    words:
+      - transcription: the
+      - transcription: first
+      - transcription: little
+      - transcription: pig
+      - transcription: was
+      - transcription: very
+      - transcription: lazy
+
+  - transcription: He didn't want to work at all and he built his house out of straw.
+    translation:
+    words:
+      - transcription: he
+      - transcription: didn't
+      - transcription: want
+      - transcription: to
+      - transcription: work
+      - transcription: at
+      - transcription: all
+      - transcription: and
+      - transcription: he
+      - transcription: built
+      - transcription: his
+      - transcription: house
+      - transcription: out
+      - transcription: of
+      - transcription: straw
+
+  - transcription: The second little pig worked a little bit harder but he was somewhat lazy too and he built his house out of sticks.
+    translation:
+    words:
+      - transcription: the
+      - transcription: second
+      - transcription: little
+      - transcription: pig
+      - transcription: worked
+      - transcription: a
+      - transcription: little
+      - transcription: bit
+      - transcription: harder
+      - transcription: but
+      - transcription: he
+      - transcription: was
+      - transcription: somewhat
+      - transcription: lazy
+      - transcription: too
+      - transcription: and
+      - transcription: he
+      - transcription: built
+      - transcription: his
+      - transcription: house
+      - transcription: out
+      - transcription: of
+      - transcription: sticks
+
+  - transcription: Then, they sang and danced and played together the rest of the day.
+    translation:
+    words:
+      - transcription: then
+      - transcription: they
+      - transcription: sang
+      - transcription: and
+      - transcription: danced
+      - transcription: and
+      - transcription: played
+      - transcription: together
+      - transcription: the
+      - transcription: rest
+      - transcription: of
+      - transcription: the
+      - transcription: day
+
+  - transcription: The third little pig worked hard all day and built his house with bricks.
+    translation:
+    words:
+      - transcription: the
+      - transcription: third
+      - transcription: little
+      - transcription: pig
+      - transcription: worked
+      - transcription: hard
+      - transcription: all
+      - transcription: day
+      - transcription: and
+      - transcription: built
+      - transcription: his
+      - transcription: house
+      - transcription: with
+      - transcription: bricks
+
+  - transcription: It was a sturdy house complete with a fine fireplace and chimney.
+    translation:
+    words:
+      - transcription: it
+      - transcription: was
+      - transcription: a
+      - transcription: sturdy
+      - transcription: house
+      - transcription: complete
+      - transcription: with
+      - transcription: a
+      - transcription: fine
+      - transcription: fireplace
+      - transcription: and
+      - transcription: chimney
+
+  - transcription: It looked like it could withstand the strongest winds.
+    translation:
+    words:
+      - transcription: it
+      - transcription: looked
+      - transcription: like
+      - transcription: it
+      - transcription: could
+      - transcription: withstand
+      - transcription: the
+      - transcription: strongest
+      - transcription: winds
