@@ -21,6 +21,38 @@ text | utterance | word |                        pre | token  | post            
 
 **NOTE:** _This project is still in initial development phases, but should be ready for initial release by the end of September 2019._
 
+## Basic Usage
+
+This following examples process any JSON files in the current directory and output a concordance file to `concordance.tsv` in Keyword in Context format. At a minimum, the concordance function requires a single argument: a wordform or list of wordforms to concordance.
+
+As a module:
+
+```js
+const concordance = require(`concordance`)
+
+const wordforms = [`little`, `big`];
+
+concordance(wordforms);
+```
+
+On the command line:
+
+```cmd
+dlx-conc -k little,big
+```
+
+**Note:** When using this library from the command line, Keyword in Context format is _not_ enabled by default. It must be enabled by passing the `-k` or `--kwic` flag.
+
+## Options
+
+The available options are listed below.
+
+Module       | Command Line       | Default             | Description
+------------ | ------------------ | ------------------- | -----------
+`dir`        | `-d, --dir`        | `"."`               | the directory where the corpus is located
+`KWIC`       | `-k, --KWIC`       | `false`             | whether to create the concordance in Keyword in Context format; adds `pre` and `post` columns to the concordance if true
+`outputPath` | `-o, --outputPath` | `"concordance.tsv"` | location where the concordance file should be generated
+
 ## Contributing
 
 [Report an issue or suggest a feature here.][issues]
