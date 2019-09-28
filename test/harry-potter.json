@@ -12,10 +12,10 @@
       "translation": null,
       "words": [
         {
-          "transcription": "Mr"
+          "transcription": { "en": "Mr" }
         },
         {
-          "transcription": "and"
+          "transcription": { "eng": "and" }
         },
         {
           "transcription": "Mrs"

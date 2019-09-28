@@ -27,7 +27,7 @@ text | utterance | word |                        pre | token  | post            
 
 Pull requests are very welcome. Please make sure you've [opened and issue][issues] for your change first.
 
-You can run the tests for this library by running `npm test` on the command line. Tests are written using [Jasmine][Jasmine].
+No test suite was written for this library, but you can test the results with `npm test`. A test concordance will be generated at `test/concordance.tsv`.
 
 ## About
 
