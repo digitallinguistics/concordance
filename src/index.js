@@ -22,6 +22,8 @@ const defaultColumns = [
   `token`,
 ];
 
+const kwicColumns = [...defaultColumns.slice(0, 3), `pre`, `token`, `post`];
+
 // METHODS
 
 /**
@@ -44,6 +46,30 @@ function chunk(arr, size) {
 }
 
 /**
+ * Accepts an array of DLx Word Token objects and concatenates their transcriptions
+ * @param  {Array}  words An array of DLx Word Tokens
+ * @return {String}
+ */
+function concatWords(words) {
+  return words
+  .map(({ transcription: t }) => getTranscription(t))
+  .join(` `);
+}
+
+/**
+ * Retrieves the value of a transcription
+ * @param  {Object|String} txn The value of the DLx transcription property
+ * @return {String}
+ */
+function getTranscription(txn) {
+  return typeof txn === `string` ?
+    txn :
+    txn.eng
+    || txn.en
+    || txn[Object.keys(txn)[0]];
+}
+
+/**
  * Ignore method passed to recursive-readdir. Ignores all non-JSON files.
  * @param  {String}  filePath The file path to check
  * @param  {Object}  stats    An fs.stats object
@@ -60,9 +86,11 @@ function ignore(filePath, stats) {
  * @param  {Array}   wordforms   An array of wordforms to concordance
  * @param  {Stream}  csvStream   The CSV stream
  * @param  {Object}  progressBar The progress bar to increment
+ * @param  {Object}  options     The options passed to the concordance method
  * @return {Promise}
  */
-function processFile(filePath, wordforms, csvStream, progressBar) {
+// eslint-disable-next-line max-params
+function processFile(filePath, wordforms, csvStream, progressBar, options) {
   return new Promise((resolve, reject) => {
 
     const title        = path.basename(filePath, `.json`);
@@ -76,22 +104,27 @@ function processFile(filePath, wordforms, csvStream, progressBar) {
 
       words.forEach(({ transcription }, i) => {
 
-        const txn = typeof transcription === `string` ?
-          transcription :
-          transcription.eng
-            || transcription.en
-            || transcription[Object.keys(transcription)[0]];
+        const txn = getTranscription(transcription);
 
         if (!wordforms.includes(txn)) return;
 
         const wordNum = i + 1;
+        const record  = [title, utteranceNum, wordNum];
 
-        csvStream.write([
-          title,
-          utteranceNum,
-          wordNum,
-          txn,
-        ]);
+        if (options.KWIC) {
+
+          const pre  = concatWords(words.slice(0, i));
+          const post = concatWords(words.slice(i + 1));
+
+          record.push(...[pre, txn, post]);
+
+        } else {
+
+          record.push(txn);
+
+        }
+
+        csvStream.write(record);
 
       });
 
@@ -117,27 +150,42 @@ function processFile(filePath, wordforms, csvStream, progressBar) {
  * @param  {Array}   wordforms   Array of wordforms to list the tokens of
  * @param  {Stream}  csvStream   The CSV stream
  * @param  {Object}  progressBar The progress bar to increment
+ * @param  {Object}  options     The options passed to the concordance method
  * @return {Promise}
  */
-function processFiles(files, wordforms, csvStream, progressBar) {
-  return Promise.all(files.map(file => processFile(file, wordforms, csvStream, progressBar)));
+function processFiles(files, wordforms, csvStream, progressBar, options) { // eslint-disable-line max-params
+  return Promise.all(files.map(file => processFile(file, wordforms, csvStream, progressBar, options)));
 }
 
 // MAIN
 
+/**
+ * Create a concordance file for a set of wordforms in a JSON corpus
+ * @param  {String|Array} wordforms                              A wordform or array of wordforms to concordance
+ * @param  {Object}       [options={}]                           An options hash
+ * @param  {String}       [options.dir=`.`]                      The directory where the JSON corpus is located
+ * @param  {String}       [options.outputPath=`concordance.tsv`] The path where the concordance file should be generated
+ * @param  {Boolean}      [options.KWIC=false]                   Whether to output the concordance in Keyword in Context (KWIC) format, with "pre" and "post" columns
+ * @return {Promise}
+ */
 async function concordance(
   wordforms,
-  dir = `.`,
-  outputPath = `concordance.tsv`
+  options = {},
 ) {
 
   wordforms = Array.from(wordforms); // eslint-disable-line no-param-reassign
+
+  const {
+    dir        = `.`,
+    KWIC       = false,
+    outputPath = `concordance.tsv`,
+  } = options;
 
   const files      = await recurse(dir, [ignore]);
   const fileGroups = chunk(files, 10);
 
   const csvOptions = {
-    columns:   defaultColumns,
+    columns:   KWIC ? kwicColumns : defaultColumns,
     delimiter: `\t`,
     header:    true,
     quote:     false,
@@ -156,7 +204,8 @@ async function concordance(
       fileGroup,
       wordforms,
       csvStream,
-      progressBar
+      progressBar,
+      { KWIC }
     );
   }
 
