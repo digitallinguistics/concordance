@@ -1,9 +1,10 @@
 # Concordance
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/digitallinguistics/concordance)][releases]
-[![GitHub issues](https://img.shields.io/github/issues/digitallinguistics/concordance)][issues]
-[![npm](https://img.shields.io/npm/dt/digitallinguistics/concordance)][npm]
-[![GitHub](https://img.shields.io/github/license/digitallinguistics/concordance)][license]
+[![GitHub releases](https://img.shields.io/github/v/release/digitallinguistics/concordance)][releases]
+[![status](https://github.com/digitallinguistics/concordance/workflows/test/badge.svg)][actions]
+[![issues](https://img.shields.io/github/issues/digitallinguistics/concordance)][issues]
+[![npm downloads](https://img.shields.io/npm/dt/digitallinguistics/concordance)][npm]
+[![license](https://img.shields.io/github/license/digitallinguistics/concordance)][license]
 [![GitHub stars](https://img.shields.io/github/stars/digitallinguistics/concordance?style=social)][GitHub]
 
 The Digital Linguistics (DLx) Concordance library is a Node.js library for performing concordance-related tasks on [corpora][corpus] (collections of texts in a language) which are formatted according to the [Data Format for Digital Linguistics][DaFoDiL] (<abbr title='Data Format for Digital Linguistics'>DaFoDiL</abbr>) (a JSON-based format). It is useful for anybody doing research involving linguistic corpora. If your data are not yet in DaFoDiL format, there are several converters available [here][converters].
@@ -22,6 +23,7 @@ You can run the tests for this library by running `npm test` on the command line
 
 This library is authored and maintained by [Daniel W. Hieber][me].
 
+[actions]:    https://github.com/digitallinguistics/concordance/actions
 [converters]: https://developer.digitallinguistics.io/#converters
 [corpus]:     https://en.wikipedia.org/wiki/Text_corpus
 [DaFoDiL]:    https://format.digitallinguistics.io/
