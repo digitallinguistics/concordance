@@ -1,7 +1,7 @@
 # Concordance
 
 [![GitHub releases](https://img.shields.io/github/v/release/digitallinguistics/concordance)][releases]
-[![status](https://github.com/digitallinguistics/concordance/workflows/test/badge.svg)][actions]
+[![status](https://github.com/digitallinguistics/concordance/workflows/tests/badge.svg)][actions]
 [![issues](https://img.shields.io/github/issues/digitallinguistics/concordance)][issues]
 [![npm downloads](https://img.shields.io/npm/dt/digitallinguistics/concordance)][npm]
 [![license](https://img.shields.io/github/license/digitallinguistics/concordance)][license]
