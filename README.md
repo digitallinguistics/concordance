@@ -4,6 +4,7 @@
 [![status](https://github.com/digitallinguistics/concordance/workflows/tests/badge.svg)][actions]
 [![issues](https://img.shields.io/github/issues/digitallinguistics/concordance)][issues]
 [![npm downloads](https://img.shields.io/npm/dt/digitallinguistics/concordance)][npm]
+[![DOI](https://zenodo.org/badge/210680113.svg)][Zenodo]
 [![license](https://img.shields.io/github/license/digitallinguistics/concordance)][license]
 [![GitHub stars](https://img.shields.io/github/stars/digitallinguistics/concordance?style=social)][GitHub]
 
@@ -63,7 +64,9 @@ No test suite was written for this library, but you can test the results with `n
 
 ## About
 
-This library is authored and maintained by [Daniel W. Hieber][me].
+This library is authored and maintained by [Daniel W. Hieber][me]. Please consider citing this library following the model below:
+
+> Hieber, Daniel W. 2019. digitallinguistics/concordance. DOI:[10.5281/zenodo.3464144][Zenodo]
 
 [actions]:    https://github.com/digitallinguistics/concordance/actions
 [converters]: https://developer.digitallinguistics.io/#converters
@@ -76,3 +79,4 @@ This library is authored and maintained by [Daniel W. Hieber][me].
 [me]:         https://danielhieber.com/
 [npm]:        https://www.npmjs.com/package/@digitallinguistics/concordance
 [releases]:   https://github.com/digitallinguistics/concordance/releases
+[Zenodo]:     https://zenodo.org/badge/latestdoi/210680113
