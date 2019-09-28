@@ -9,29 +9,33 @@ const defaultColumns = [
 ];
 
 function concordance(
-  wordforms = [],
+  wordforms,
   dir = `.`,
   outputPath = `concordance.tsv`
 ) {
+  return new Promise((resolve, reject) => {
 
-  wordforms = Array.from(wordforms); // eslint-disable-line no-param-reassign
+    wordforms = Array.from(wordforms); // eslint-disable-line no-param-reassign
 
-  const csvOptions = {
-    columns:   defaultColumns,
-    delimiter: `\t`,
-    header:    true,
-    quote:     ``,
-  };
+    const csvOptions = {
+      columns:   defaultColumns,
+      delimiter: `\t`,
+      header:    true,
+      quote:     false,
+    };
 
-  const csvStream   = createCSVStream(csvOptions);
-  const writeStream = createWriteStream(outputPath, `utf8`);
+    const csvStream   = createCSVStream(csvOptions);
+    const writeStream = createWriteStream(outputPath, `utf8`);
 
-  csvStream
-  .on(`error`, console.error)
-  .pipe(writeStream)
-  .on(`error`, console.error);
+    csvStream
+    .on(`error`, reject)
+    .pipe(writeStream)
+    .on(`error`, reject);
 
-  csvStream.end();
+    csvStream.end();
+    resolve();
+
+  });
 
 }
 
