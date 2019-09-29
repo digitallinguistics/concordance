@@ -1,6 +1,6 @@
 {
   "name": "@digitallinguistics/concordance",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Node.js library for concordancing a corpus formatted according to the Data Format for Digital Linguistis (DaFoDiL)",
   "keywords": [
     "corpus linguistics",
