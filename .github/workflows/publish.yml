@@ -16,9 +16,14 @@ jobs:
 
       - name: install Node.js
         uses: actions/setup-node@master
+        with:
+          registry-url: https://registry.npmjs.org/
 
       - name: install dependencies
         run: npm ci
+
+      - name: run tests
+        run: npm test
 
       - name: publish
         run: npm publish
