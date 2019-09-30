@@ -7,7 +7,8 @@ const recurse         = require(`recursive-readdir`);
 const {
   createReadStream,
   createWriteStream,
-} = require(`fs`);
+  readJSON,
+} = require(`fs-extra`);
 
 // CONSTANTS
 
@@ -161,25 +162,27 @@ function processFiles(files, wordforms, csvStream, progressBar, options) { // es
 
 /**
  * Create a concordance file for a set of wordforms in a JSON corpus
- * @param  {String|Array} wordforms                              A wordform or array of wordforms to concordance
  * @param  {Object}       [options={}]                           An options hash
  * @param  {String}       [options.dir=`.`]                      The directory where the JSON corpus is located
  * @param  {String}       [options.outputPath=`concordance.tsv`] The path where the concordance file should be generated
  * @param  {Boolean}      [options.KWIC=false]                   Whether to output the concordance in Keyword in Context (KWIC) format, with "pre" and "post" columns
+ * @param  {String|Array} [options.wordforms=[]]                 A wordform or array of wordforms to concordance
+ * @param  {String}       [options.wordlist=undefined]           Path to a file containing a JSON array of words to concordance
  * @return {Promise}
  */
-async function concordance(
-  wordforms,
-  options = {},
-) {
-
-  wordforms = Array.from(wordforms); // eslint-disable-line no-param-reassign
+async function concordance(options = {}) {
 
   const {
     dir        = `.`,
     KWIC       = false,
     outputPath = `concordance.tsv`,
+    wordlist,
   } = options;
+
+  let { wordforms = [] } = options;
+
+  if (wordlist) wordforms = await readJSON(wordlist);
+  else wordforms = Array.from(wordforms);
 
   const files      = await recurse(dir, [ignore]);
   const fileGroups = chunk(files, 10);

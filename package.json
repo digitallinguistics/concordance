@@ -26,7 +26,7 @@
     "dlx-conc": "./concordance.js"
   },
   "scripts": {
-    "test": "node concordance.js -d test -o test/concordance.tsv -k little"
+    "test": "node concordance.js -d test -o test/concordance.tsv -k --wordlist=test/wordlist.json"
   },
   "engines": {
     "node": ">=12.0"
@@ -35,13 +35,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "fs-extra": "^8.1.0"
+    "eslint": "^6.4.0"
   },
   "dependencies": {
     "JSONStream": "^1.3.5",
     "commander": "^3.0.2",
     "csv-stringify": "^5.3.3",
+    "fs-extra": "^8.1.0",
     "progress": "^2.0.3",
     "recursive-readdir": "^2.2.2"
   }
