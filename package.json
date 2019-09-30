@@ -26,7 +26,7 @@
     "dlx-conc": "./concordance.js"
   },
   "scripts": {
-    "test": "node concordance.js -d test -o test/concordance.tsv -k --wordlist=test/wordlist.json"
+    "test": "node concordance.js -d test -o test/concordance.tsv -c 5 -k --wordlist=test/wordlist.json"
   },
   "engines": {
     "node": ">=12.0"

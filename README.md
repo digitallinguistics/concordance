@@ -50,6 +50,7 @@ The available options are listed below.
 
 Module       | Command Line       | Default             | Description
 ------------ | ------------------ | ------------------- | -----------
+`context`    | `-c, --context`    | `10`                | the number of words to show to either side of the token (if the `KWIC` option is set to `true`)
 `dir`        | `-d, --dir`        | `"."`               | the directory where the corpus is located
 `KWIC`       | `-k, --KWIC`       | `false`             | whether to create the concordance in Keyword in Context format; adds `pre` and `post` columns to the concordance if true
 `outputPath` | `-o, --outputPath` | `"concordance.tsv"` | path where the concordance file should be generated
