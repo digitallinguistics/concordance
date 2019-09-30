@@ -33,16 +33,16 @@ const concordance = require(`concordance`)
 
 const wordforms = [`little`, `big`];
 
-concordance(wordforms);
+concordance({ wordforms });
 ```
 
 On the command line:
 
 ```cmd
-dlx-conc -k little,big
+dlx-conc -k --wordforms=little,big
 ```
 
-**Note:** When using this library from the command line, Keyword in Context format is _not_ enabled by default. It must be enabled by passing the `-k` or `--kwic` flag.
+**Note:** The Keyword in Context format is _not_ enabled by default. It must be enabled by passing the `-k` or `--kwic` flag.
 
 ## Options
 
@@ -52,7 +52,9 @@ Module       | Command Line       | Default             | Description
 ------------ | ------------------ | ------------------- | -----------
 `dir`        | `-d, --dir`        | `"."`               | the directory where the corpus is located
 `KWIC`       | `-k, --KWIC`       | `false`             | whether to create the concordance in Keyword in Context format; adds `pre` and `post` columns to the concordance if true
-`outputPath` | `-o, --outputPath` | `"concordance.tsv"` | location where the concordance file should be generated
+`outputPath` | `-o, --outputPath` | `"concordance.tsv"` | path where the concordance file should be generated
+`wordforms`  | `-w, --wordforms`  | `[]`                | a string or list of strings of words to concordance (formatted as an array when using as a module, and as a comma-separated list when using on the command line)
+`wordlist`   | `-l, --wordlist`   | `undefined`         | path to a file containing a JSON array of words to concordance
 
 ## Contributing
 
