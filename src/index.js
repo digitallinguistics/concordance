@@ -99,6 +99,11 @@ function processFile(filePath, wordforms, csvStream, progressBar, options) {
     const jsonStream   = JSONStream.parse(`utterances.*`);
     let   utteranceNum = 0;
 
+    const {
+      context,
+      KWIC,
+    } = options;
+
     jsonStream.on(`data`, ({ words }) => {
 
       utteranceNum++;
@@ -112,10 +117,14 @@ function processFile(filePath, wordforms, csvStream, progressBar, options) {
         const wordNum = i + 1;
         const record  = [title, utteranceNum, wordNum];
 
-        if (options.KWIC) {
+        if (KWIC) {
 
-          const pre  = concatWords(words.slice(0, i));
-          const post = concatWords(words.slice(i + 1));
+          const preContextStart = Math.max(i - context, 0);
+          const pre = concatWords(words.slice(preContextStart, i));
+
+          const postContextStart = i + 1;
+          const postContextEnd   = postContextStart + context;
+          const post = concatWords(words.slice(postContextStart, postContextEnd));
 
           record.push(...[pre, txn, post]);
 
@@ -179,7 +188,12 @@ async function concordance(options = {}) {
     wordlist,
   } = options;
 
-  let { wordforms = [] } = options;
+  let {
+    context = 10,
+    wordforms = [],
+  } = options;
+
+  context = Number(context);
 
   if (wordlist) wordforms = await readJSON(wordlist);
   else wordforms = Array.from(wordforms);
@@ -210,7 +224,10 @@ async function concordance(options = {}) {
       wordforms,
       csvStream,
       progressBar,
-      { KWIC }
+      {
+        context,
+        KWIC,
+      }
     );
   }
 

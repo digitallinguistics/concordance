@@ -9,6 +9,7 @@ function formatList(str) {
 }
 
 program.version(version, `-v, --version`, `output the current version`)
+.option(`-c, --context <context>`, `number of words to show to either side of the token, when KWIC format is enabled`, 10)
 .option(`-d, --dir <dir>`, `directory where the corpus is located`, `.`)
 .option(`-k, --KWIC`, `whether to output the concordance in Keyword in Context (KWIC) format; if true, "pre" and "post" fields are added`, false)
 .option(`-l, --wordlist <wordlist>`, `location where the list of words to concordance (as a JSON array) is located; overrides wordforms option if present`)

@@ -1,7 +1,7 @@
 text	utterance	word	pre	token	post
-three-little-pigs	1	13	once upon a time there was an old mother pig who had	three	little pigs and not enough food to feed them
-three-little-pigs	1	14	once upon a time there was an old mother pig who had three	little	pigs and not enough food to feed them
+three-little-pigs	1	13	old mother pig who had	three	little pigs and not enough
+three-little-pigs	1	14	mother pig who had three	little	pigs and not enough food
 three-little-pigs	3	3	the first	little	pig was very lazy
-three-little-pigs	5	3	the second	little	pig worked a little bit harder but he was somewhat lazy too and he built his house out of sticks
-three-little-pigs	5	7	the second little pig worked a	little	bit harder but he was somewhat lazy too and he built his house out of sticks
-three-little-pigs	7	3	the third	little	pig worked hard all day and built his house with bricks
+three-little-pigs	5	3	the second	little	pig worked a little bit
+three-little-pigs	5	7	second little pig worked a	little	bit harder but he was
+three-little-pigs	7	3	the third	little	pig worked hard all day
