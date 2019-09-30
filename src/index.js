@@ -201,6 +201,8 @@ async function concordance(options = {}) {
   csvStream.on(`error`, console.error);
   writeStream.on(`error`, console.error);
 
+  csvStream.pipe(writeStream);
+
   // process each group of files sequentially
   for (const fileGroup of fileGroups) {
     await processFiles( // eslint-disable-line no-await-in-loop
@@ -211,8 +213,6 @@ async function concordance(options = {}) {
       { KWIC }
     );
   }
-
-  csvStream.pipe(writeStream);
 
 }
 
