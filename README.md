@@ -20,8 +20,6 @@ text | utterance | word |                        pre | token  | post            
 3LP  | 5         | 7    | second little pig worked a | little | bit harder but he was    |
 3LP  | 7         | 3    | The third                  | little | pig worked hard all day  |
 
-**NOTE:** _This project is still in initial development phases, but should be ready for initial release by the end of September 2019._
-
 ## Basic Usage
 
 This following examples process any JSON files in the current directory and output a concordance file to `concordance.tsv` in Keyword in Context format. At a minimum, the concordance function requires a single argument: a wordform or list of wordforms to concordance.
